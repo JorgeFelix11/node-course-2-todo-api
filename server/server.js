@@ -1,27 +1,24 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const body_parser_1 = __importDefault(require("body-parser"));
-const mongoose_1 = require("./db/mongoose");
-const Todo_1 = require("./models/Todo");
-let app = express_1.default();
-let port = 3000;
+exports.__esModule = true;
+var express = require("express");
+var bodyParser = require("body-parser");
+var mongoose_1 = require("./db/mongoose");
+var Todo_1 = require("./models/Todo");
+var app = express();
+var port = 3000;
 mongoose_1.mongooseConnection();
-app.use(body_parser_1.default.json());
-app.post('/todos', (req, res) => {
+app.use(bodyParser.json());
+app.post('/todos', function (req, res) {
     var todo = new Todo_1.Todo({
         text: req.body.text
     });
-    todo.save().then(doc => {
+    todo.save().then(function (doc) {
         res.send(doc);
-        console.log("Todo created");
-    }, e => {
+        console.log("Todo created thank youusseduu");
+    }, function (e) {
         res.status(400).send(e);
     });
 });
-app.listen(port, () => {
+app.listen(port, function () {
     console.log('Started on port 3000');
 });

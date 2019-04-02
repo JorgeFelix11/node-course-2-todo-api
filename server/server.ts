@@ -1,5 +1,5 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
 
 import {mongooseConnection} from './db/mongoose';
 import {Todo} from "./models/Todo";
@@ -15,7 +15,7 @@ app.post('/todos', (req, res) => {
   })
   todo.save().then(doc => {
     res.send(doc)
-    console.log("Todo created")
+    console.log("Todo created thank youusseduu")
   }, e => {
     res.status(400).send(e);
   })
