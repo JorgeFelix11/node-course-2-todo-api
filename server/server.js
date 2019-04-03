@@ -7,6 +7,7 @@ const Todo_1 = require("./models/Todo");
 const mongodb_1 = require("mongodb");
 let app = express();
 mongoose_1.mongooseConnection();
+let port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.post('/todos', (req, res) => {
     var todo = new Todo_1.Todo({
@@ -40,6 +41,6 @@ app.get('/todos/:id', (req, res) => {
         res.send({ todo });
     }).catch(e => res.status(400).send());
 });
-app.listen(3000, () => {
-    console.log('Started on port 3000');
+app.listen(port, () => {
+    console.log(`Started on port ${port}`);
 });
