@@ -17,5 +17,5 @@ var todoSchema = new mongoose_1.Schema({
         default: null
     }
 });
-var Todo = mongoose_1.model("child", todoSchema);
+var Todo = mongoose_1.model("todo", todoSchema, 'Todo');
 exports.Todo = Todo;

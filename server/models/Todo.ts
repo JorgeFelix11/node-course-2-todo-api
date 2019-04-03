@@ -23,5 +23,5 @@ var todoSchema = new Schema({
   }
 })
 
-var Todo = model<ITodoModel>("child", todoSchema);
+var Todo = model<ITodoModel>("todo", todoSchema, 'Todo');
 export {Todo};

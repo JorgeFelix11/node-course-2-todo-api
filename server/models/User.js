@@ -9,5 +9,5 @@ let UserSchema = new mongoose_1.Schema({
         trim: true
     }
 });
-var User = mongoose_1.model("User", UserSchema);
+var User = mongoose_1.model("User", UserSchema, 'User');
 exports.User = User;

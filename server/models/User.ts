@@ -13,5 +13,5 @@ let UserSchema = new Schema({
   }
 })
 
-var User = model<IUserModel>("User", UserSchema);
+var User = model<IUserModel>("User", UserSchema, 'User');
 export {User};
