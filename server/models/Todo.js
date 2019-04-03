@@ -1,6 +1,6 @@
 "use strict";
-exports.__esModule = true;
-var mongoose_1 = require("mongoose");
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
 var todoSchema = new mongoose_1.Schema({
     text: {
         type: String,
@@ -10,12 +10,12 @@ var todoSchema = new mongoose_1.Schema({
     },
     completed: {
         type: Boolean,
-        "default": false
+        default: false
     },
     completedAt: {
         type: Number,
-        "default": null
+        default: null
     }
 });
-var Todo = mongoose_1.model("Todo", todoSchema);
+var Todo = mongoose_1.model("child", todoSchema);
 exports.Todo = Todo;
